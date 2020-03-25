@@ -1,0 +1,19 @@
+{
+  "name": "braingames-package",
+  "version": "1.0.0",
+  "description": "frontend-project-lvl1",
+  "main": "src/index.js",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "repository": {
+    "type": "module",
+    "url": "frontend-project-lvl1"
+  },
+  "keywords": [
+    "code"
+  ],
+  "author": "Vlad Medvedev",
+  "license": "ISC",
+  "dependencies": {}
+}
