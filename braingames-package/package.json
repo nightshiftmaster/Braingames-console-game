@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "frontend-project-lvl1",
   "main": "src/index.js",
+  "type": "module",
   "bin": {
     "brain-games": "bin/brain-games.js"
   },
   "repository": {
-    "type": "module",
+    "type": "git",
     "url": "frontend-project-lvl1"
   },
   "keywords": [
@@ -15,5 +16,13 @@
   ],
   "author": "Vlad Medvedev",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.0"
+  }
 }
