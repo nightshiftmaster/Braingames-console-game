@@ -7,3 +7,4 @@ console.log('Welcome to the Brain games!')
 
 
 printWords()
+     console.log; 
