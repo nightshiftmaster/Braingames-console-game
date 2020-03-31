@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-import printWords from '../src/index.js';
+import { printWords, game } from '../src/index.js';
 
-console.log('Welcome to the Brain games!')
+console.log('Welcome to the Brain games!');
 
 
-
-printWords()
-     console.log; 
+printWords();
+game();
