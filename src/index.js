@@ -2,12 +2,14 @@
 import readlineSync from 'readline-sync';
 
 import {
-  brainCalc, rightAnswer, ifEven, ifEvengame, numb,
+  brainCalc, rightAnswer, ifEven, ifEvengame, numb, numbers, maxDivisor,
 } from './game.js';
 
 const evenQuestion = ('Answer "yes" if the number is even, otherwise answer "no".');
 
 const calcQuestion = ('What is the result of the expression?');
+
+const maxDivisuestion = ('Find the greatest common divisor of given numbers.');
 
 
 let name = '';
@@ -19,17 +21,17 @@ export const printWords = () => {
   name = userName;
 };
 export const game = () => {
-  console.log(`${calcQuestion}`);
+  console.log(`${maxDivisuestion}`);
   for (let i = 0; i < 3; i += 1) {
-    brainCalc();
+    numbers();
     const answer = readlineSync.question('Your answer: ');
-    if (answer === rightAnswer()) {
+    if (answer === maxDivisor()) {
       console.log('Correct!');
     } else {
-      if (answer !== rightAnswer()) {
-        return console.log(`"${answer}" is wrong answer ;(. Correct answer was "${rightAnswer()}". Let's try again,${name}`);
+      if (answer !== maxDivisor()) {
+        return console.log(`"${answer}" is wrong answer ;(. Correct answer was "${maxDivisor()}". Let's try again,${name}`);
       } if (answer === 'yes') {
-        return console.log(`"yes" is wrong answer ;(. Correct answer was "no". Let's try again,${name}`);
+        return console.log(`"yes" is wrong answer ;(. Correct answer was "no". Let's try again, ${name}`);
       }
     }
   }

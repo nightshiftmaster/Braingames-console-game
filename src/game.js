@@ -1,4 +1,4 @@
-
+// ifEven game :
 export const ifEven = (numb) => {
   const result = (numb % 2 === 0 ? 'yes' : 'no');
   return result;
@@ -7,11 +7,11 @@ let number = 0;
 export const ifEvengame = () => {
   ifEven();
   number = (Math.floor(Math.random() * 11));
-  console.log('Question: ', number);
+  console.log('Question: ', number.toString());
 };
 export const numb = () => number;
 
-
+// calculator game:
 let alert = '';
 let result = 0;
 
@@ -37,3 +37,18 @@ export const brainCalc = () => {
   return result;
 };
 export const rightAnswer = () => result.toString();
+
+// max divisor game:
+let devisor = 0;
+export const numbers = () => {
+  const a = (Math.floor(Math.random() * 20));
+  const b = (Math.floor(Math.random() * 20));
+  console.log('Question:', a.toString(), b.toString());
+  for (let i = 1; i <= a; i += 1) {
+    if (a % i === 0 && b % i === 0) {
+      devisor = Math.max(i);
+    }
+  }
+  return devisor;
+};
+export const maxDivisor = () => devisor.toString();

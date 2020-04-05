@@ -6,3 +6,6 @@
 
 # brain-calc
 <a href="https://asciinema.org/a/ydh0eMLMOqFe0Tyitk4w683Jq" target="_blank"><img src="https://asciinema.org/a/ydh0eMLMOqFe0Tyitk4w683Jq.svg" /></a>
+
+# max divisor
+<a href="https://asciinema.org/a/EvJcgm94gAxca0HA6WeHFrsbc" target="_blank"><img src="https://asciinema.org/a/EvJcgm94gAxca0HA6WeHFrsbc.svg" /></a>
