@@ -1,31 +1,36 @@
 
 import readlineSync from 'readline-sync';
 
+import {
+  brainCalc, rightAnswer, ifEven, ifEvengame, numb,
+} from './game.js';
+
+const evenQuestion = ('Answer "yes" if the number is even, otherwise answer "no".');
+
+const calcQuestion = ('What is the result of the expression?');
+
+
 let name = '';
+
+
 export const printWords = () => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   name = userName;
 };
-
-const ifEven = (numb) => (numb % 2 === 0 ? 'yes' : 'no');
-
 export const game = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no"');
+  console.log(`${calcQuestion}`);
   for (let i = 0; i < 3; i += 1) {
-    const number = (Math.floor(Math.random() * 11));
-    console.log(number);
-
-    const answer = readlineSync.question('');
-    if (answer === ifEven(number)) {
+    brainCalc();
+    const answer = readlineSync.question('Your answer: ');
+    if (answer === rightAnswer()) {
       console.log('Correct!');
     } else {
-      if (answer === 'no') {
-        return console.log(`"no" is wrong answer ;(. Correct answer was "yes". Let's try again,${name}`);
+      if (answer !== ifEven(numb())) {
+        return console.log(`"${answer}" is wrong answer ;(. Correct answer was "${ifEven(numb())}". Let's try again,${name}`);
       } if (answer === 'yes') {
         return console.log(`"yes" is wrong answer ;(. Correct answer was "no". Let's try again,${name}`);
       }
-      return console.log(`wrong answer,let's try again, ${name}`);
     }
   }
   return console.log('Congratulations, vlad!');

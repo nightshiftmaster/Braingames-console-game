@@ -6,7 +6,8 @@
   "type": "module",
   "bin": {
     "brain-games": "bin/brain-games.js",
-    "brain-even": "bin/brain-games.js"
+    "brain-even": "bin/brain-games.js",
+    "brain-calc": "bin/brain-games.js"
   },
   "repository": {
     "type": "git",
