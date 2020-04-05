@@ -26,8 +26,8 @@ export const game = () => {
     if (answer === rightAnswer()) {
       console.log('Correct!');
     } else {
-      if (answer !== ifEven(numb())) {
-        return console.log(`"${answer}" is wrong answer ;(. Correct answer was "${ifEven(numb())}". Let's try again,${name}`);
+      if (answer !== rightAnswer()) {
+        return console.log(`"${answer}" is wrong answer ;(. Correct answer was "${rightAnswer()}". Let's try again,${name}`);
       } if (answer === 'yes') {
         return console.log(`"yes" is wrong answer ;(. Correct answer was "no". Let's try again,${name}`);
       }

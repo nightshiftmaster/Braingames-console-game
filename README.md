@@ -5,4 +5,4 @@
 <a href="https://asciinema.org/a/YveazpTL5o0TuOBb4BKXQWLGQ" target="_blank"><img src="https://asciinema.org/a/YveazpTL5o0TuOBb4BKXQWLGQ.svg" /></a>
 
 # brain-calc
-<a href="https://asciinema.org/a/UDUpphCBaHABoasJeXswP4ZGl" target="_blank"><img src="https://asciinema.org/a/UDUpphCBaHABoasJeXswP4ZGl.svg" /></a>
+<a href="https://asciinema.org/a/ydh0eMLMOqFe0Tyitk4w683Jq" target="_blank"><img src="https://asciinema.org/a/ydh0eMLMOqFe0Tyitk4w683Jq.svg" /></a>
