@@ -9,3 +9,6 @@
 
 # max divisor
 <a href="https://asciinema.org/a/EvJcgm94gAxca0HA6WeHFrsbc" target="_blank"><img src="https://asciinema.org/a/EvJcgm94gAxca0HA6WeHFrsbc.svg" /></a>
+
+# brain-progression
+<a href="https://asciinema.org/a/1NoQMOxJmO2ADg0g4AaZeGA8J" target="_blank"><img src="https://asciinema.org/a/1NoQMOxJmO2ADg0g4AaZeGA8J.svg" /></a>

@@ -41,10 +41,10 @@ export const rightAnswer = () => result.toString();
 // max divisor game:
 let devisor = 0;
 export const numbers = () => {
-  const a = (Math.floor(Math.random() * 20));
-  const b = (Math.floor(Math.random() * 20));
+  const a = (Math.floor(Math.random() * 20) + 1);
+  const b = (Math.floor(Math.random() * 20) + 1);
   console.log('Question:', a.toString(), b.toString());
-  for (let i = 1; i <= a; i += 1) {
+  for (let i = 0; i <= a; i += 1) {
     if (a % i === 0 && b % i === 0) {
       devisor = Math.max(i);
     }
@@ -52,3 +52,25 @@ export const numbers = () => {
   return devisor;
 };
 export const maxDivisor = () => devisor.toString();
+
+// progression game
+let numberOfprogress = 0;
+let arr2 = [];
+export const progression = () => {
+  let string = '';
+  let string2 = '';
+  let arr = [];
+  const num = ((Math.floor(Math.random() * 100)));
+  const step = (Math.floor(Math.random() * 4) + 1);
+  const border = num + (step * 10);
+  for (let i = num; i < border; i += step) {
+    string += (`${i} `);
+    arr = string.split(' ');
+    numberOfprogress = (Math.floor(Math.random() * 10));
+    arr2 = arr[numberOfprogress];
+    arr[numberOfprogress] = '..';
+    string2 = arr.join(' ');
+  }
+  console.log(string2);
+};
+export const rightNumber = () => arr2;
