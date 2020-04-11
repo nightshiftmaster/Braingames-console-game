@@ -1,7 +1,7 @@
 # braingames-package
 [![Maintainability](https://api.codeclimate.com/v1/badges/6d6fa27caab3b226c0e9/maintainability)](https://codeclimate.com/github/nightshiftmaster/frontend-project-lvl1/maintainability)
 
-[!(https://github.com/nightshiftmaster/frontend-project-lvl1/workflows/nodejs.yml/badge.svg)](https://github.com/nightshiftmaster/frontend-project-lvl1/actions)
+[![Node CI](https://github.com/nightshiftmaster/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/nightshiftmaster/frontend-project-lvl1/actions)
 
 
 # brain-even
