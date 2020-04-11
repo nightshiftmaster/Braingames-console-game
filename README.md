@@ -14,4 +14,4 @@
 <a href="https://asciinema.org/a/1NoQMOxJmO2ADg0g4AaZeGA8J" target="_blank"><img src="https://asciinema.org/a/1NoQMOxJmO2ADg0g4AaZeGA8J.svg" /></a>
 
 # brain-prime
-<a href="https://asciinema.org/a/RDY7h7PsTpAGJS5GoB6AnLc9i" target="_blank"><img src="https://asciinema.org/a/RDY7h7PsTpAGJS5GoB6AnLc9i.svg" /></a>∂
+<a href="https://asciinema.org/a/RDY7h7PsTpAGJS5GoB6AnLc9i" target="_blank"><img src="https://asciinema.org/a/RDY7h7PsTpAGJS5GoB6AnLc9i.svg" /></a>
