@@ -1,5 +1,8 @@
 # braingames-package
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+[![Maintainability](https://api.codeclimate.com/v1/badges/6d6fa27caab3b226c0e9/maintainability)](https://codeclimate.com/github/nightshiftmaster/frontend-project-lvl1/maintainability)
+
+https://github.com/nightshiftmaster/frontend-project-lvl1/workflows/frontend-project-lvl1/.github/workflows/nodejs.yml/badge.svg 
+
 
 # brain-even
 <a href="https://asciinema.org/a/YveazpTL5o0TuOBb4BKXQWLGQ" target="_blank"><img src="https://asciinema.org/a/YveazpTL5o0TuOBb4BKXQWLGQ.svg" /></a>
