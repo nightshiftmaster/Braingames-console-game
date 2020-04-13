@@ -1,4 +1,4 @@
-import game from '../src/index.js';
+import game from '../index.js';
 
 const gameAlert = ('Answer "yes" if given number is prime. Otherwise answer "no".');
 

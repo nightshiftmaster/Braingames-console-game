@@ -3,16 +3,17 @@
   "version": "1.0.0",
   "description": "frontend-project-lvl1",
   "main": "src/index.js",
-  "type": "module",
   "bin": {
-    "brain-even": "bin/brain-even.js",
-    "brain-calc": "bin/brain-calculator.js",
-    "brain-gcd": "bin/brain-gcd.js",
-    "brain-progression": "bin/brain-progression.js",
-    "brain-prime": "bin/brain-prime.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calculator.js",
+    "brain-gcd": "dist/bin/brain-gcd.js",
+    "brain-progression": "dist/bin/brain-progression.js",
+    "brain-prime": "dist/bin/brain-prime.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "jest",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
