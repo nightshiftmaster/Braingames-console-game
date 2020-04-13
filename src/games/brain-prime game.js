@@ -3,17 +3,12 @@ import game from '../index.js';
 const gameAlert = ('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 const ifPrime = (num) => {
-  let amount = 0;
   let answer = '';
-  for (let i = 1; i <= num; i += 1) {
+  for (let i = 1, amount = 0; i <= num; i += 1) {
     if (num % i === 0) {
       amount += 1;
     }
-    if (amount > 2 || amount === 1) {
-      answer = 'no';
-    } else {
-      answer = 'yes';
-    }
+    answer = (amount > 2 || amount === 1) ? 'no' : 'yes';
   }
   return answer;
 };
