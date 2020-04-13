@@ -21,7 +21,7 @@ const brainCalc = () => {
   } else if (question.includes('*')) {
     result = (a * b);
   }
- console.log('Question:', question);
+  console.log('Question:', question);
 };
 
 const rightAnswer = () => result.toString();
