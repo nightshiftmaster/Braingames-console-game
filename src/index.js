@@ -19,4 +19,3 @@ const game = (gameAlert, question, reply) => {
   return console.log(`Congratulations, ${userName}`);
 };
 export default game;
-;
