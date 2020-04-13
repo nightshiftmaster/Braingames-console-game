@@ -9,7 +9,11 @@ const ifPrime = (num) => {
     if (num % i === 0) {
       amount += 1;
     }
-    answer = (amount > 2 || amount === 1) ? 'no' : 'yes';
+    if (amount > 2 || amount === 1) {
+      answer = 'no';
+    } else {
+      answer = 'yes';
+    }
   }
   return answer;
 };
