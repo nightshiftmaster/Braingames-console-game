@@ -15,7 +15,7 @@ const generateProgression = () => {
   for (let i = start; i < border; i += step) {
     progression.push(i);
   }
-  hiddenNumberIndex = (Math.floor(Math.random() * 10) + 1);
+  hiddenNumberIndex = (Math.floor(Math.random() * 9) + 1);
   progression[hiddenNumberIndex] = '..';
   const question = progression.join(' ');
   return question;
@@ -23,7 +23,9 @@ const generateProgression = () => {
 
 const number = (progres) => {
   let result = 0;
-  for (let n = 0; n < 10; n += 1) {
+  const firstSymbl = 0;
+  const lastSymbl = progres.length;
+  for (let n = firstSymbl; n < lastSymbl; n += 1) {
     result = (progres[0] + step * hiddenNumberIndex);
   }
   return result.toString();
