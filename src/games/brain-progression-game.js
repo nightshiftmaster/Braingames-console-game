@@ -21,7 +21,7 @@ const generateProgression = () => {
   return question;
 };
 
-const hiddeNumber = (progres) => {
+const number = (progres) => {
   let result = 0;
   for (let n = 0; n < 10; n += 1) {
     result = (progres[0] + step * hiddenNumberIndex);
@@ -29,6 +29,6 @@ const hiddeNumber = (progres) => {
   return result.toString();
 };
 
-const showNumber = () => hiddeNumber(progression);
+const showNumber = () => number(progression);
 const progressionGame = () => game(gameAlert, generateProgression, showNumber);
 export default progressionGame;
