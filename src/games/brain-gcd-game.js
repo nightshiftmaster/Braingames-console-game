@@ -1,22 +1,30 @@
 import game from '../index.js';
 
+import numberGenerator from './number-generator.js';
+
 const gameAlert = ('Find the greatest common divisor of given numbers.');
 
-let devisor = 0;
+let number1 = 0;
+let number2 = 0;
 
 const numbers = () => {
-  const number1 = (Math.floor(Math.random() * 20) + 1);
-  const number2 = (Math.floor(Math.random() * 20) + 1);
-  console.log('Question:', number1.toString(), number2.toString());
-  for (let i = 0; i <= number1; i += 1) {
-    if (number1 % i === 0 && number2 % i === 0) {
-      devisor = Math.max(i);
+  number1 = (numberGenerator());
+  number2 = (numberGenerator());
+  const question = (`${number1} ${number2}`);
+  return question;
+};
+
+const maxDivisor = (num1, num2) => {
+  let devisor = 0;
+  for (let i = 0; i <= num1; i += 1) {
+    if (num1 % i === 0 && num2 % i === 0) {
+      devisor = (Math.max(i)).toString();
     }
   }
   return devisor;
 };
-const maxDivisor = () => devisor.toString();
+const checkMaxDevisor = () => maxDivisor(number1, number2);
 
-const maxDivisorGame = () => game(gameAlert, numbers, maxDivisor);
+const maxDivisorGame = () => game(gameAlert, numbers, checkMaxDevisor);
 
 export default maxDivisorGame;

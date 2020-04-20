@@ -8,7 +8,7 @@ const game = (gameAlert, question, reply) => {
   console.log(`Hello, ${userName}!`);
   console.log(gameAlert);
   for (let i = 0; i < 3; i += 1) {
-    question();
+    console.log('Question:', question());
     const answer = readlineSync.question('Your answer: ');
     if (answer === reply()) {
       console.log('Correct!');

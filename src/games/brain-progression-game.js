@@ -1,5 +1,7 @@
 import game from '../index.js';
 
+import numberGenerator from './number-generator.js';
+
 const gameAlert = ('What number is missing in the progression?');
 
 let numberOfprogress = 0;
@@ -9,7 +11,7 @@ const progression = () => {
   let string = '';
   let string2 = '';
   let arr = [];
-  const num = ((Math.floor(Math.random() * 100)));
+  const num = (numberGenerator());
   const step = (Math.floor(Math.random() * 4) + 1);
   const border = num + (step * 10);
   for (let i = num; i < border; i += step) {
@@ -20,7 +22,7 @@ const progression = () => {
     arr[numberOfprogress] = '..';
     string2 = arr.join(' ');
   }
-  console.log(string2);
+  return string2;
 };
 const rightNumber = () => arr2;
 
