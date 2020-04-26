@@ -1,6 +1,6 @@
 import game from '../index.js';
 
-import numberGenerator from './number-generator.js';
+import numberGenerator from '../number-generator';
 
 const gameAlert = ('Answer "yes" if given number is prime. Otherwise answer "no".');
 

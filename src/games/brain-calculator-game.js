@@ -1,6 +1,6 @@
 import game from '../index.js';
 
-import numberGenerator from './number-generator.js';
+import numberGenerator from '../number-generator';
 
 const gameAlert = ('What is the result of the expression?');
 
@@ -14,7 +14,7 @@ const brainCalc = () => {
   const subtraction = (`${number1} - ${number2}`);
   const value = [];
   const action = [addition, multiplication, subtraction];
-  const actionIndex = 3;
+  const actionIndex = action.length;
   value.push(action[Math.floor(Math.random() * actionIndex)]);
   const question = value.toString();
   switch (question) {

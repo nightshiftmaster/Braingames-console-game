@@ -1,6 +1,6 @@
 import game from '../index.js';
 
-import numberGenerator from './number-generator.js';
+import numberGenerator from '../number-generator';
 
 const gameAlert = ('Find the greatest common divisor of given numbers.');
 

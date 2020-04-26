@@ -1,21 +1,20 @@
 import game from '../index.js';
 
-import numberGenerator from './number-generator.js';
+import numberGenerator from '../number-generator';
 
-const ifEven = (numb) => (numb % 2 === 0 ? 'yes' : 'no');
+const ifEven = (numb) => (numb % 2 === 0);
 
 const gameAlert = ('Answer "yes" if the number is even, otherwise answer "no".');
 
-let result = 0;
+let rightAnswer;
 const question = () => {
   const number = (numberGenerator());
-  result = number.toString();
-  return result;
+  rightAnswer = (ifEven(number) ? 'yes' : 'no');
+  return number.toString();
 };
+const answer = () => rightAnswer;
 
-const rightAnswer = () => ifEven(result);
-
-const brainEvengame = () => game(gameAlert, question, rightAnswer);
+const brainEvengame = () => game(gameAlert, question, answer);
 
 
 export default brainEvengame;

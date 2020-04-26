@@ -7,15 +7,19 @@ const game = (gameAlert, question, reply) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(gameAlert);
-  for (let i = 0; i < 3; i += 1) {
+  const congratulation = (`Congratulations, ${userName}`);
+  const steps = 3;
+  for (let i = 0; i < steps; i += 1) {
     console.log('Question:', question());
     const answer = readlineSync.question('Your answer: ');
+    const rightAlert = ('Correct!');
+    const wrongAlert = (`"${answer}" is wrong answer ;(. Correct answer was "${reply()}". Let's try again,${userName}`);
     if (answer === reply()) {
-      console.log('Correct!');
+      console.log(rightAlert);
     } else if (answer !== reply()) {
-      return console.log(`"${answer}" is wrong answer ;(. Correct answer was "${reply()}". Let's try again,${userName}`);
+      return console.log(wrongAlert);
     }
   }
-  return console.log(`Congratulations, ${userName}`);
+  return console.log(congratulation);
 };
 export default game;
