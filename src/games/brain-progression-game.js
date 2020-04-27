@@ -10,12 +10,15 @@ let hiddenNumberIndex;
 const generateProgression = () => {
   const start = (numberGenerator());
   progression = [];
-  step = (Math.floor(Math.random() * 4) + 1);
-  const border = start + (step * 10);
+  const span = 4;
+  const numberOfSteps = 10;
+  step = (Math.floor(Math.random() * span) + 1);
+  const border = start + (step * numberOfSteps);
   for (let i = start; i < border; i += step) {
     progression.push(i);
   }
-  hiddenNumberIndex = (Math.floor(Math.random() * 9) + 1);
+  const progrLength = progression.length - 1;
+  hiddenNumberIndex = (Math.floor(Math.random() * progrLength) + 1);
   progression[hiddenNumberIndex] = '..';
   const question = progression.join(' ');
   return question;
