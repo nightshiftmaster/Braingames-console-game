@@ -4,36 +4,42 @@ import numberGenerator from '../number-generator';
 
 const gameAlert = ('What number is missing in the progression?');
 
-let step = 0;
-let progression = [];
-let hiddenNumberIndex;
+const space = [];
+const progression = [];
+const missingNumber = [];
 const generateProgression = () => {
-  const start = (numberGenerator());
-  progression = [];
+  const start = numberGenerator();
+  const numbers = [];
   const span = 4;
   const numberOfSteps = 10;
-  step = (Math.floor(Math.random() * span) + 1);
+  const step = numberGenerator(1, span);
+  space.pop();
+  space.push(step);
   const border = start + (step * numberOfSteps);
   for (let i = start; i < border; i += step) {
-    progression.push(i);
+    numbers.push(i);
   }
-  const progrLength = progression.length - 1;
-  hiddenNumberIndex = (Math.floor(Math.random() * progrLength) + 1);
-  progression[hiddenNumberIndex] = '..';
-  const question = progression.join(' ');
-  return question;
+  progression.pop();
+  progression.push(numbers);
+  const progrLength = numbers.length - 1;
+  const hiddenNumberIndex = numberGenerator(1, progrLength);
+  missingNumber.pop();
+  missingNumber.push(hiddenNumberIndex);
+  numbers[hiddenNumberIndex] = '..';
+  const progressionToString = numbers.join(' ');
+  return progressionToString;
 };
 
-const number = (progres) => {
-  let result = 0;
+const showHiddenNumber = (progress) => {
+  let number = 0;
   const firstSymbl = 0;
-  const lastSymbl = progres.length;
+  const lastSymbl = progress.length;
   for (let n = firstSymbl; n < lastSymbl; n += 1) {
-    result = (progres[0] + step * hiddenNumberIndex);
+    number = (progress[0] + space * missingNumber);
   }
-  return result.toString();
+  return number.toString();
 };
 
-const showNumber = () => number(progression);
+const showNumber = () => showHiddenNumber(progression.flat());
 const progressionGame = () => game(gameAlert, generateProgression, showNumber);
 export default progressionGame;

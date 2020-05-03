@@ -4,25 +4,27 @@ import numberGenerator from '../number-generator';
 
 const gameAlert = ('Answer "yes" if given number is prime. Otherwise answer "no".');
 
-const ifPrime = (num) => {
-  for (let i = 2; i < num; i += 1) {
-    if (num % i === 0) {
+const isPrime = (num) => {
+  const prime = num > 1;
+  for (let i = 2; i <= num / 2; i += 1) {
+    if (num % i === 0 || !prime) {
       return false;
     }
   }
-  return num > 1;
+  return prime;
 };
 
-let numb = 0;
-const number = () => {
-  numb = numberGenerator().toString();
-  return numb;
+
+const rightAnswer = [];
+const generateNumber = () => {
+  const number = numberGenerator().toString();
+  const answer = (isPrime(number) ? 'yes' : 'no');
+  rightAnswer.pop();
+  rightAnswer.push(answer);
+  return number;
 };
 
-const checkNumber = () => {
-  const result = (ifPrime(numb) ? 'yes' : 'no');
-  return result;
-};
+const showAnswer = () => rightAnswer.toString();
 
-const brainPrimegame = () => game(gameAlert, number, checkNumber);
-export default brainPrimegame;
+const brainPrimeGame = () => game(gameAlert, generateNumber, showAnswer);
+export default brainPrimeGame;

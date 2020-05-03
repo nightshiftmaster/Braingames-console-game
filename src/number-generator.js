@@ -1,5 +1,3 @@
-const number = (start, end) => (Math.floor(Math.random() * end) + start);
-
-const numberGenerator = () => number(1, 50);
+const numberGenerator = (start = 1, end = 50) => (Math.floor(Math.random() * end) + start);
 
 export default numberGenerator;

@@ -4,27 +4,31 @@ import numberGenerator from '../number-generator';
 
 const gameAlert = ('Find the greatest common divisor of given numbers.');
 
-let number1 = 0;
-let number2 = 0;
+const numb1 = [];
+const numb2 = [];
 
-const numbers = () => {
-  number1 = (numberGenerator());
-  number2 = (numberGenerator());
-  const question = (`${number1} ${number2}`);
-  return question;
+const generateNumbers = () => {
+  const number1 = (numberGenerator());
+  const number2 = (numberGenerator());
+  numb1.pop();
+  numb2.pop();
+  numb1.push(number1);
+  numb2.push(number2);
+  const numbers = (`${number1} ${number2}`);
+  return numbers;
 };
 
-const maxDivisor = (num1, num2) => {
-  let devisor = 0;
+const showGreatestDivisor = (num1, num2) => {
+  let divisor = 0;
   for (let i = 0; i <= num1; i += 1) {
     if (num1 % i === 0 && num2 % i === 0) {
-      devisor = (Math.max(i)).toString();
+      divisor = (Math.max(i)).toString();
     }
   }
-  return devisor;
+  return divisor;
 };
-const checkMaxDevisor = () => maxDivisor(number1, number2);
+const checkGreatestDivisor = () => showGreatestDivisor(numb1, numb2);
 
-const maxDivisorGame = () => game(gameAlert, numbers, checkMaxDevisor);
+const greatestDivisorGame = () => game(gameAlert, generateNumbers, checkGreatestDivisor);
 
-export default maxDivisorGame;
+export default greatestDivisorGame;
