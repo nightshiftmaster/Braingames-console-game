@@ -14,9 +14,9 @@ const generateNumber = () => {
   rightAnswer.push(answer);
   return number.toString();
 };
-const showAnswer = () => rightAnswer.toString();
+const showRightAnswer = () => rightAnswer.toString();
 
-const brainEvenGame = () => game(gameAlert, generateNumber, showAnswer);
+const brainEvenGame = () => game(gameAlert, generateNumber, showRightAnswer);
 
 
 export default brainEvenGame;
