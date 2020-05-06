@@ -16,10 +16,11 @@ const game = (gameAlert, question, reply) => {
     const wrongAlert = (`"${answer}" is wrong answer ;(. Correct answer was "${reply()}". Let's try again,${userName}`);
     if (answer === reply()) {
       console.log(rightAlert);
-    } else if (answer !== reply()) {
-      return console.log(wrongAlert);
+    } if (answer !== reply()) {
+      console.log(wrongAlert);
+      return;
     }
   }
-  return console.log(congratulation);
+  console.log(congratulation);
 };
 export default game;
