@@ -20,7 +20,7 @@ const showNumbers = () => {
   return numbers;
 };
 
-const showGrandDivisor = () => (`${gcd}`);
+const showGrandDivisor = () => `${gcd}`;
 
 const runGcdGame = () => game(gameAlert, showNumbers, showGrandDivisor);
 
