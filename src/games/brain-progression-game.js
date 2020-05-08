@@ -1,18 +1,18 @@
 import game from '../index.js';
 
-import numberGenerator from '../number-generator';
+import generateNumber from '../number-generator';
 
 const gameAlert = ('What number is missing in the progression?');
 
 const space = [];
 const progression = [];
 const missingNumber = [];
-const generateProgression = () => {
-  const start = numberGenerator();
+const createProgression = () => {
+  const start = generateNumber();
   const numbers = [];
   const span = 4;
   const numberOfSteps = 10;
-  const step = numberGenerator(1, span);
+  const step = generateNumber(1, span);
   space.pop();
   space.push(step);
   const border = start + (step * numberOfSteps);
@@ -22,7 +22,7 @@ const generateProgression = () => {
   progression.pop();
   progression.push(numbers);
   const progrLength = numbers.length - 1;
-  const hiddenNumberIndex = numberGenerator(1, progrLength);
+  const hiddenNumberIndex = generateNumber(1, progrLength);
   missingNumber.pop();
   missingNumber.push(hiddenNumberIndex);
   numbers[hiddenNumberIndex] = '..';
@@ -41,5 +41,5 @@ const showHiddenNumber = (progress) => {
 };
 
 const showNumber = () => showHiddenNumber(progression.flat());
-const progressionGame = () => game(gameAlert, generateProgression, showNumber);
-export default progressionGame;
+const runProgressionGame = () => game(gameAlert, createProgression, showNumber);
+export default runProgressionGame;

@@ -1,6 +1,6 @@
 import game from '../index.js';
 
-import numberGenerator from '../number-generator';
+import generateNumber from '../number-generator';
 
 const gameAlert = ('Answer "yes" if given number is prime. Otherwise answer "no".');
 
@@ -16,15 +16,15 @@ const isPrime = (num) => {
 
 
 const rightAnswer = [];
-const generateNumber = () => {
-  const number = numberGenerator().toString();
+const showNumber = () => {
+  const number = generateNumber().toString();
   const answer = (isPrime(number) ? 'yes' : 'no');
   rightAnswer.pop();
   rightAnswer.push(answer);
   return number;
 };
 
-const showAnswer = () => rightAnswer.toString();
+const showAnswer = () => `${rightAnswer}`;
 
-const brainPrimeGame = () => game(gameAlert, generateNumber, showAnswer);
-export default brainPrimeGame;
+const runPrimeGame = () => game(gameAlert, showNumber, showAnswer);
+export default runPrimeGame;
