@@ -4,7 +4,6 @@ import generateNumber from '../number-generator';
 
 const gameAlert = ('What is the result of the expression?');
 
-const expression = [];
 const createExpression = () => {
   const number1 = generateNumber();
   const number2 = generateNumber();
@@ -16,17 +15,12 @@ const createExpression = () => {
   const value = [];
   value.push(action[generateNumber(0, actionIndex)]);
   const generatedExpression = value.toString();
-  expression.pop();
-  expression.push(generatedExpression);
   return generatedExpression;
 };
 
-const calculateResult = () => {
-  let partOfExpression = [];
+const calculateResult = (expression) => {
   let result = 0;
-  const stringOfExpression = expression.join('');
-  partOfExpression = stringOfExpression.split(' ');
-  console.log(partOfExpression);
+  const partOfExpression = expression.split(' ');
   switch (partOfExpression[1]) {
     case ('+'):
       result = Number(partOfExpression[0]) + Number(partOfExpression[2]);
@@ -40,10 +34,15 @@ const calculateResult = () => {
     default:
       break;
   }
-  return result.toString();
+  return result;
 };
 
+const generateData = () => {
+  const expression = createExpression();
+  const result = calculateResult(expression);
+  return [expression, result];
+};
 
-const runCalculatorGame = () => game(gameAlert, createExpression, calculateResult);
+const runCalculatorGame = () => game(gameAlert, generateData);
 
 export default runCalculatorGame;

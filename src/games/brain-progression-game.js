@@ -4,42 +4,39 @@ import generateNumber from '../number-generator';
 
 const gameAlert = ('What number is missing in the progression?');
 
-const space = [];
-const progression = [];
-const missingNumber = [];
-const createProgression = () => {
-  const start = generateNumber();
-  const numbers = [];
-  const span = 4;
-  const numberOfSteps = 10;
+const createProgression = (start, span, length) => {
+  const progression = [];
   const step = generateNumber(1, span);
-  space.pop();
-  space.push(step);
-  const border = start + (step * numberOfSteps);
+  const border = start + (step * length);
   for (let i = start; i < border; i += step) {
-    numbers.push(i);
+    progression.push(i);
   }
-  progression.pop();
-  progression.push(numbers);
-  const progrLength = numbers.length - 1;
+  const progrLength = progression.length - 1;
   const hiddenNumberIndex = generateNumber(1, progrLength);
-  missingNumber.pop();
-  missingNumber.push(hiddenNumberIndex);
-  numbers[hiddenNumberIndex] = '..';
-  const progressionToString = numbers.join(' ');
-  return progressionToString;
+  progression[hiddenNumberIndex] = '..';
+  return [progression, step, hiddenNumberIndex];
 };
 
-const showHiddenNumber = (progress) => {
+const showHiddenNumber = (progression, space, hiddenIndex) => {
   let number = 0;
   const firstSymbl = 0;
-  const lastSymbl = progress.length;
+  const lastSymbl = progression.length;
   for (let n = firstSymbl; n < lastSymbl; n += 1) {
-    number = (progress[0] + space * missingNumber);
+    number = (progression[0] + space * hiddenIndex);
   }
-  return number.toString();
+  return number;
 };
 
-const showNumber = () => showHiddenNumber(progression.flat());
-const runProgressionGame = () => game(gameAlert, createProgression, showNumber);
+
+const makeData = () => {
+  const data = createProgression(generateNumber(1, 50), generateNumber(1, 5), 10);
+  const progression = data[0];
+  const space = data[1];
+  const hiddenNumber = data[2];
+  const number = showHiddenNumber(progression, space, hiddenNumber);
+  const progressionToString = progression.join(' ');
+  return [progressionToString, number];
+};
+
+const runProgressionGame = () => game(gameAlert, makeData);
 export default runProgressionGame;

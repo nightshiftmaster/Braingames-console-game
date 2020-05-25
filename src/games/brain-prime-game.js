@@ -5,26 +5,22 @@ import generateNumber from '../number-generator';
 const gameAlert = ('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 const isPrime = (num) => {
-  const prime = num > 1;
+  if (num <= 1) {
+    return false;
+  }
   for (let i = 2; i <= num / 2; i += 1) {
-    if (num % i === 0 || !prime) {
+    if (num % i === 0) {
       return false;
     }
   }
-  return prime;
+  return true;
 };
 
-
-const rightAnswer = [];
-const showNumber = () => {
+const generateData = () => {
   const number = generateNumber().toString();
   const answer = (isPrime(number) ? 'yes' : 'no');
-  rightAnswer.pop();
-  rightAnswer.push(answer);
-  return number;
+  return [number, answer];
 };
 
-const showAnswer = () => `${rightAnswer}`;
-
-const runPrimeGame = () => game(gameAlert, showNumber, showAnswer);
+const runPrimeGame = () => game(gameAlert, generateData);
 export default runPrimeGame;
