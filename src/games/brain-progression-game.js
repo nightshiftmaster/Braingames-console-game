@@ -20,21 +20,12 @@ const createProgression = (start, span, length) => {
 const showAnswer = (progression) => {
   let number;
   let hiddenIndex;
+  let space;
   for (let n = 0; n < progression.length; n += 1) {
-    let current = progression[n];
-    let previus = progression[n - 1];
     if (progression[n] === '..') {
       hiddenIndex = n;
     }
-    if (current === '..' || previus === '..') {
-      current = progression[n + 1];
-      previus = progression[[n - 1] + 1];
-      if (current === progression[progression.length]) {
-        current = progression[n - 2];
-        previus = progression[[n - 1] - 2];
-      }
-    }
-    const space = current - previus;
+    space = progression[1] - progression[0];
     number = (progression[0] + space * hiddenIndex);
   }
   return number;
