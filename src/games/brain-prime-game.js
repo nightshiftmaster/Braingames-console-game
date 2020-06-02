@@ -16,10 +16,10 @@ const isPrime = (num) => {
   return true;
 };
 
-const generateData = () => {
+const generateQuestionAndAnswer = () => {
   const question = generateNumber();
   const answer = (isPrime(question) ? 'yes' : 'no');
-  return [question.toString(), answer];
+  return [`${question}`, answer];
 };
 
-export default () => runGame(gameAlert, generateData);
+export default () => runGame(gameAlert, generateQuestionAndAnswer);

@@ -20,9 +20,7 @@ const createProgression = (start, span, length) => {
 const showAnswer = (progression) => {
   let number;
   let hiddenIndex;
-  const firstSymbl = 0;
-  const lastSymbl = progression.length;
-  for (let n = firstSymbl; n < lastSymbl; n += 1) {
+  for (let n = 0; n < progression.length; n += 1) {
     let current = progression[n];
     let previus = progression[n - 1];
     if (progression[n] === '..') {
@@ -31,13 +29,13 @@ const showAnswer = (progression) => {
     if (current === '..' || previus === '..') {
       current = progression[n + 1];
       previus = progression[[n - 1] + 1];
-      if (current === progression[lastSymbl]) {
+      if (current === progression[progression.length]) {
         current = progression[n - 2];
         previus = progression[[n - 1] - 2];
       }
     }
     const space = current - previus;
-    number = (progression[firstSymbl] + space * hiddenIndex);
+    number = (progression[0] + space * hiddenIndex);
   }
   return number;
 };
