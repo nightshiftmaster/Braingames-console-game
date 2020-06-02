@@ -12,21 +12,20 @@ const createProgression = (start, span, length) => {
     progression.push(i);
   }
   const progrLength = progression.length - 1;
-  const hiddenNumberIndex = generateNumber(1, progrLength);
+  const hiddenNumberIndex = generateNumber(2, progrLength);
   progression[hiddenNumberIndex] = '..';
   return progression;
 };
 
 const showAnswer = (progression) => {
   let number;
-  let hiddenIndex;
-  let space;
-  for (let n = 0; n < progression.length; n += 1) {
+  const start = 2;
+  for (let n = start; n < progression.length; n += 1) {
     if (progression[n] === '..') {
-      hiddenIndex = n;
+      const hiddenIndex = n;
+      const space = progression[1] - progression[0];
+      number = (progression[0] + space * hiddenIndex);
     }
-    space = progression[1] - progression[0];
-    number = (progression[0] + space * hiddenIndex);
   }
   return number;
 };
