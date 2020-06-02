@@ -1,4 +1,4 @@
-import game from '../index.js';
+import runGame from '../index.js';
 
 import generateNumber from '../number-generator';
 
@@ -12,24 +12,23 @@ const createExpression = () => {
   const subtraction = (`${number1} - ${number2}`);
   const action = [addition, multiplication, subtraction];
   const actionIndex = action.length;
-  const value = [];
-  value.push(action[generateNumber(0, actionIndex)]);
-  const generatedExpression = value.toString();
-  return generatedExpression;
+  let expression = '';
+  expression += action[generateNumber(0, actionIndex)];
+  const expressionToArr = expression.split(' ');
+  return expressionToArr;
 };
 
-const calculateResult = (expression) => {
+const calculateResult = (operator, number1, number2) => {
   let result = 0;
-  const partOfExpression = expression.split(' ');
-  switch (partOfExpression[1]) {
+  switch (operator) {
     case ('+'):
-      result = Number(partOfExpression[0]) + Number(partOfExpression[2]);
+      result = number1 + number2;
       break;
     case ('*'):
-      result = Number(partOfExpression[0]) * Number(partOfExpression[2]);
+      result = number1 * number2;
       break;
     case ('-'):
-      result = Number(partOfExpression[0]) - Number(partOfExpression[2]);
+      result = number1 - number2;
       break;
     default:
       break;
@@ -38,11 +37,12 @@ const calculateResult = (expression) => {
 };
 
 const generateData = () => {
-  const expression = createExpression();
-  const result = calculateResult(expression);
-  return [expression, result];
+  const question = createExpression();
+  const operator = question[1];
+  const number1 = Number(question[0]);
+  const number2 = Number(question[2]);
+  const answer = calculateResult(operator, number1, number2);
+  return [question.join(' '), answer.toString()];
 };
 
-const runCalculatorGame = () => game(gameAlert, generateData);
-
-export default runCalculatorGame;
+export default () => runGame(gameAlert, generateData);

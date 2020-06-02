@@ -1,4 +1,4 @@
-import game from '../index.js';
+import runGame from '../index.js';
 
 import generateNumber from '../number-generator';
 
@@ -14,29 +14,39 @@ const createProgression = (start, span, length) => {
   const progrLength = progression.length - 1;
   const hiddenNumberIndex = generateNumber(1, progrLength);
   progression[hiddenNumberIndex] = '..';
-  return [progression, step, hiddenNumberIndex];
+  return progression;
 };
 
-const showHiddenNumber = (progression, space, hiddenIndex) => {
-  let number = 0;
+const showAnswer = (progression) => {
+  let number;
+  let hiddenIndex;
   const firstSymbl = 0;
   const lastSymbl = progression.length;
   for (let n = firstSymbl; n < lastSymbl; n += 1) {
-    number = (progression[0] + space * hiddenIndex);
+    let current = progression[n];
+    let previus = progression[n - 1];
+    if (progression[n] === '..') {
+      hiddenIndex = n;
+    }
+    if (current === '..' || previus === '..') {
+      current = progression[n + 1];
+      previus = progression[[n - 1] + 1];
+      if (current === progression[lastSymbl]) {
+        current = progression[n - 2];
+        previus = progression[[n - 1] - 2];
+      }
+    }
+    const space = current - previus;
+    number = (progression[firstSymbl] + space * hiddenIndex);
   }
   return number;
 };
 
-
 const makeData = () => {
   const data = createProgression(generateNumber(1, 50), generateNumber(1, 5), 10);
-  const progression = data[0];
-  const space = data[1];
-  const hiddenNumber = data[2];
-  const number = showHiddenNumber(progression, space, hiddenNumber);
-  const progressionToString = progression.join(' ');
-  return [progressionToString, number];
+  const answer = showAnswer(data).toString();
+  const question = data.join(' ');
+  return [question, answer];
 };
 
-const runProgressionGame = () => game(gameAlert, makeData);
-export default runProgressionGame;
+export default () => runGame(gameAlert, makeData);

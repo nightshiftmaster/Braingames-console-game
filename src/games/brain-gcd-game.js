@@ -1,4 +1,4 @@
-import game from '../index.js';
+import runGame from '../index.js';
 
 import generateNumber from '../number-generator';
 
@@ -11,17 +11,14 @@ const calculateGcd = (num1, num2) => {
       divisor = (Math.max(i)).toString();
     }
   }
-  return [[`${num1} ${num2}`], divisor];
+  return divisor;
 };
-
 
 const generateData = () => {
-  const data = calculateGcd(generateNumber(), generateNumber());
-  const numbers = data[0];
-  const gcd = data[1];
-  return [numbers, gcd];
+  const question = [generateNumber(), generateNumber()];
+  const [number1, number2] = question;
+  const answer = calculateGcd(number1, number2);
+  return [`${number1} ${number2}`, answer];
 };
 
-const runGcdGame = () => game(gameAlert, generateData);
-
-export default runGcdGame;
+export default () => runGame(gameAlert, generateData);

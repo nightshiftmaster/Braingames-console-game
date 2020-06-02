@@ -1,4 +1,4 @@
-import game from '../index.js';
+import runGame from '../index.js';
 
 import generateNumber from '../number-generator';
 
@@ -17,10 +17,9 @@ const isPrime = (num) => {
 };
 
 const generateData = () => {
-  const number = generateNumber().toString();
-  const answer = (isPrime(number) ? 'yes' : 'no');
-  return [number, answer];
+  const question = generateNumber();
+  const answer = (isPrime(question) ? 'yes' : 'no');
+  return [question.toString(), answer];
 };
 
-const runPrimeGame = () => game(gameAlert, generateData);
-export default runPrimeGame;
+export default () => runGame(gameAlert, generateData);
