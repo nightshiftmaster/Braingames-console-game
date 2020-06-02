@@ -43,7 +43,7 @@ const showAnswer = (progression) => {
 };
 
 const makeData = () => {
-  const data = createProgression(generateNumber(1, 50), generateNumber(1, 5), 10);
+  const data = createProgression(generateNumber(1, 50), generateNumber(1, 6), 10);
   const answer = showAnswer(data).toString();
   const question = data.join(' ');
   return [question, answer];
