@@ -17,9 +17,10 @@ const isPrime = (num) => {
 };
 
 const generateQuestionAndAnswer = () => {
-  const gameQuestion = generateNumber();
-  const gameAnswer = (isPrime(gameQuestion) ? 'yes' : 'no');
-  return [gameQuestion.toString(), gameAnswer];
+  const number = generateNumber();
+  const gameQuestion = number.toString();
+  const gameAnswer = isPrime(number) ? 'yes' : 'no';
+  return [gameQuestion, gameAnswer];
 };
 
 export default () => runGame(gameAlert, generateQuestionAndAnswer);
