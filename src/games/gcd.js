@@ -15,10 +15,11 @@ const calculateGcd = (num1, num2) => {
 };
 
 const generateData = () => {
-  const question = [generateNumber(), generateNumber()];
-  const [number1, number2] = question;
+  const number1 = generateNumber();
+  const number2 = generateNumber();
+  const question = `${number1} ${number2}`;
   const answer = calculateGcd(number1, number2);
-  return [`${number1} ${number2}`, answer];
+  return [question, answer];
 };
 
 export default () => runGame(gameAlert, generateData);
