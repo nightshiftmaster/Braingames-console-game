@@ -1,4 +1,4 @@
-"Brain Games" - a suite of five console games, built on the principle of popular mobile applications for pumping the brain. Each game asks questions that need to be answered correctly. After three correct answers, it is considered that the the game is passed with success and you won. Wrong answers interrupt the game and offer to pass it again. 
+"Brain Games" - a suite of five console games, built on the principle of popular mobile applications for pumping the brain. Each game asks questions that need to be answered correctly. After three correct answers, it is considered that the game is passed with success and you won. Wrong answers interrupt the game and offer to pass it again. 
 Games:
 1) Brain-even. Determination of an even number.
 2) Brain-calculator. Calculation of mathematical expressions.
