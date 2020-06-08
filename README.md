@@ -17,9 +17,9 @@ Games:
 $ make install
 ```
 
-# brain-even
+# brain-even 
 
-## Run the game
+## Run 
 
 ```sh
 $ brain-even
@@ -27,9 +27,9 @@ $ brain-even
 
 <a href="https://asciinema.org/a/35PghFfv2pP9OyRdOAmRsaZGw" target="_blank"><img src="https://asciinema.org/a/35PghFfv2pP9OyRdOAmRsaZGw.svg" /></a>
 
-# brain-calculator
+# brain-calculator 
 
-## Run the game
+## Run 
 
 ```sh
 $ brain-calc
@@ -39,7 +39,7 @@ $ brain-calc
 
 # brain-gcd
 
-## Run the game
+## Run 
 
 ```sh
 $ brain-gcd
@@ -49,7 +49,7 @@ $ brain-gcd
 
 # brain-progression
 
-## Run the game
+## Run 
 
 ```sh
 $ brain-progression
@@ -59,7 +59,7 @@ $ brain-progression
 
 # brain-prime
 
-## Run the game
+## Run 
 
 ```sh
 $ brain-prime
