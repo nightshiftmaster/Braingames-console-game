@@ -16,11 +16,15 @@ const isPrime = (num) => {
   return true;
 };
 
-const generateQuestionAndAnswer = () => {
-  const number = generateNumber();
-  const gameQuestion = number.toString();
-  const gameAnswer = isPrime(number) ? 'yes' : 'no';
-  return [gameQuestion, gameAnswer];
+const generateData = () => {
+  const question = generateNumber();
+  let answer;
+  if (isPrime(question)) {
+    answer = 'yes';
+  } else {
+    answer = 'no';
+  }
+  return [question.toString(), answer];
 };
 
-export default () => runGame(gameAlert, generateQuestionAndAnswer);
+export default () => runGame(gameAlert, generateData);
