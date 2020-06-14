@@ -1,3 +1,8 @@
+# braingames-package
+[![Maintainability](https://api.codeclimate.com/v1/badges/6d6fa27caab3b226c0e9/maintainability)](https://codeclimate.com/github/nightshiftmaster/frontend-project-lvl1/maintainability)
+
+[![Node CI](https://github.com/nightshiftmaster/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/nightshiftmaster/frontend-project-lvl1/actions)
+
 "Brain Games" - a suite of five console games, built on the principle of popular mobile applications for pumping the brain. Each game asks questions that need to be answered correctly. After three correct answers, it is considered that the game is passed with success and you won. Wrong answers interrupt the game and offer to pass it again. 
 Games:
 1) Brain-even. Determination of an even number.
@@ -5,11 +10,6 @@ Games:
 3) Brain-gcd. Determination of the greatest common divisor.
 4) Brain-progression. Search for missing numbers in a sequence of numbers.
 5) Brain-prime. Determination of a prime number.
-
-# braingames-package
-[![Maintainability](https://api.codeclimate.com/v1/badges/6d6fa27caab3b226c0e9/maintainability)](https://codeclimate.com/github/nightshiftmaster/frontend-project-lvl1/maintainability)
-
-[![Node CI](https://github.com/nightshiftmaster/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/nightshiftmaster/frontend-project-lvl1/actions)
 
 ## Setup
 

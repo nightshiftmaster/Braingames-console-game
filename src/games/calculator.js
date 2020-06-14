@@ -6,7 +6,7 @@ const gameAlert = ('What is the result of the expression?');
 
 const createOperator = () => {
   const action = ['+', '*', '-'];
-  const result = action[generateNumber(0, action.length)];
+  const result = action[generateNumber(0, action.length - 1)];
   return result;
 };
 

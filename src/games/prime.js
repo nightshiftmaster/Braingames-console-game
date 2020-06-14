@@ -18,12 +18,7 @@ const isPrime = (num) => {
 
 const generateData = () => {
   const question = generateNumber();
-  let answer;
-  if (isPrime(question)) {
-    answer = 'yes';
-  } else {
-    answer = 'no';
-  }
+  const answer = (isPrime(question) ? 'yes' : 'no');
   return [question.toString(), answer];
 };
 
